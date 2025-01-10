@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Link Maker</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      text-align: center;
+      margin-top: 50px;
+    }
+    input, button {
+      padding: 10px;
+      margin: 5px;
+      font-size: 16px;
+    }
+    .output {
+      margin-top: 20px;
+    }
+  </style>
+</head>
+<body>
+  <h1>Prank Link Maker</h1>
+  <p>Enter a fake domain or text for the link:</p>
+  <input type="text" id="customLink" placeholder="e.g., coolsite88.org" />
+  <button onclick="generateLink()">Create Link</button>
+  <div class="output" id="output"></div>
+  <script>
+    function generateLink() {
+      const baseURL = "prank_page.html";
+      const customLink = document.getElementById("customLink").value;
+      if (customLink.trim() === "") {
+        alert("Please enter a valid link text.");
+        return;
+      }
+
+      const encodedLink = encodeURIComponent(customLink);
+      const prankLink = `${baseURL}?redirect=${encodedLink}`;
+
+      // Display the generated link
+      const outputDiv = document.getElementById("output");
+      outputDiv.innerHTML = `
+        <p>Your prank link:</p>
+        <a href="${prankLink}" target="_blank">${customLink}</a>
+      `;
+    }
+  </script>
+</body>
+</html>
