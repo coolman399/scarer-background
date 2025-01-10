@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Harmless Prank</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      background-color: white;
+      height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: Arial, sans-serif;
+    }
+    h1 {
+      color: black;
+      text-align: center;
+    }
+  </style>
+</head>
+<body>
+  <h1>Welcome to the coolest site!</h1>
+  <script>
+    // Wait 2 seconds after the page loads
+    setTimeout(() => {
+      // Change the background color to black
+      document.body.style.backgroundColor = "black";
+      document.body.style.color = "white"; // Adjust text color
+
+      // Change it back to white after 10 seconds
+      setTimeout(() => {
+        document.body.style.backgroundColor = "white";
+        document.body.style.color = "black"; // Restore text color
+      }, 10000);
+    }, 2000);
+  </script>
+</body>
+</html>
